@@ -1,9 +1,9 @@
 from fastapi import FastAPI, UploadFile, File, Request
 from fastapi.responses import HTMLResponse
-from tensorflow import keras
-from tensorflow.keras import layers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+import keras
+from keras import layers
+from keras.models import Sequential
+from keras.layers import Dense
 import numpy as np
 from PIL import Image
 # from prometheus_fastapi_instrumentator import Instrumentator
@@ -18,6 +18,7 @@ from starlette.responses import Response
 import time
 
 app = FastAPI()
+print("ih")
 
 REQUEST_COUNT = Counter('http_requests_total', 'Total number of HTTP requests',['client_ip'])
 RT_PER_LEN_GAUGE = Gauge('rt_per_length_gauge','Total running time of the request per unit length of input string',['client_ip'])
